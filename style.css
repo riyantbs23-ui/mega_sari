@@ -1,0 +1,429 @@
+:root {
+    --primary: #b08d57; /* Gold/Bronze */
+    --dark: #1a1a1a;
+    --light: #f9f9f9;
+    --text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background-color: #fff;
+    scroll-behavior: HIGHT;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: white;
+    position: fixed;
+    width: 80%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 30px; }
+nav ul li a { text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+nav ul li a:hover { color: var(--primary); }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.btn:hover { background: #8e7044; }
+
+/* Products */
+.products { padding: 80px 8%; }
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.product-grid {
+    display: row;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--light);
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.product-card img {
+    width: 50%;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.product-card p { color: var(--primary); font-weight: 600; }
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 50px 15% 20px;
+    text-align: center;
+}
+.product-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.btn-buy {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.btn-buy:hover {
+    background: var(--primary);
+    color: white;
+}
+/* Ikon Keranjang */
+.cart-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative;
+}
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #b8860b;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Modal Keranjang */
+.cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.cart-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.btn-whatsapp {
+    width: 100%;
+    background-color: #25D366;
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.btn-add {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.btn-add:hover { background: #b88819; }
+/* Tentang Kami Styling */
+.about-section {
+    padding: 80px 15%;
+    background-color: #fff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 20px 20px 0px #f3f3f3; /* Dekorasi kotak di belakang gambar */
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-title-left {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #b8860b;
+}
+
+.lead-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature-item strong {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}
+/* Kontak Section */
+.contact-section {
+    padding: 100px 10%;
+    background-color: #f9f9f9;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-item {
+    margin-bottom: 30px;
+}
+
+.info-item h3 {
+    font-size: 1.2rem;
+    color: #b8860b;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    color: #666;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.btn-submit {
+    background-color: #333;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #b8860b;
+}
+
+.map-container {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+/* Styling Tombol Hamburger */
+.menu-toggle {
+    display: none; /* Sembunyikan di desktop */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Responsive: Untuk Layar HP (Maksimal 768px) */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Munculkan di HP */
+    }
+
+    .nav-links {
+        display: none; /* Sembunyikan menu asli */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Sesuaikan dengan tinggi navbar */
+        left: 0;
+        background-color: white;
+        text-align: center;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Class yang akan dipicu oleh JavaScript */
+    .nav-links.active {
+        display: flex;
+    }
+}
+    sofa box {
+        width:250px;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:15px;
+        text-align:center;
+        box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        bacground-color:#fff;
+    }
+    >sofa-box img{
+        width:100%;
+        border-radius:8px;
+    }
+
+    .harga{
+        color:#c0392b;
+        font-weight:bold;
+        margin:10px 0;
+    }
+    button{
+        background-color:#2c3e50;
+        color:white;
+        border:none;
+        padding:10px;
+        border-radius:6px;
+        cursor:pointer;
+    }
+    button:hover{
+        backgound-color:#34495e;
+    }
